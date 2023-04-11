@@ -4,7 +4,7 @@
   "description": "Firebase Function that sends an Email coming from the Black List Rock band Landing Page",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest",
     "build": "npx tsc"
   },
   "keywords": [],
