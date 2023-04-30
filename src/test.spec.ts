@@ -1,3 +1,15 @@
-import { expect, test } from 'vitest'
+import { describe, expect, it } from 'vitest'
+import { config } from 'dotenv'
 
-test('oi', () => expect(2).toBe(2))
+config() // Env variables
+
+describe('Configuration', () => {
+
+  const { USERNAME, PASSWORD } = process.env
+  
+  it('.env file works', () => {
+    expect(USERNAME).toBeTruthy()
+    expect(PASSWORD).toBeTruthy()
+  })
+
+})
