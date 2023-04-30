@@ -1,5 +1,6 @@
 import * as nodemailer from 'nodemailer'
 import * as env from 'dotenv'
+import { render } from '@react-email/render'
 
 env.config()
 const { USERNAME, PASSWORD, TESTING } = process.env
@@ -18,13 +19,13 @@ function createTransporter() {
   })
 }
 
-export async function sendEmail() {
+export async function sendEmail(html: React.ReactElement) {
   const transporter = createTransporter()
   const response = await transporter.sendMail({
     from: USERNAME,
     to: USERNAME,
     subject: 'Test',
-    html: '<h1>Testing .env file</h1>'
+    html: html 
   })
   return response
 }
